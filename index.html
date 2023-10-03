@@ -4,8 +4,8 @@
 <head>
   <title>Landing Page</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/output.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -16,43 +16,61 @@
       <div class="h-16 w-16">
         <a href="/"><img class="rounded-full" src="https://picsum.photos/200" alt="logo"></a>
       </div>
-      <ul class="flex space-x-6">
-        <li><a href="#" class="text-gray-900 hover:text-green-700">Projects</a></li>
-        <li><a href="#" class="text-gray-900 hover:text-green-700">Pricing</a></li>
-        <li><a href="#" class="text-gray-900 hover:text-green-700">About</a></li>
-        <li><a href="#" class="text-gray-900 hover:text-green-700">Contact</a></li>
+      <ul class="laptop:flex space-x-6  hidden">
+        <li><a href="#projects" class="text-gray-900 hover:text-green-700">Projects</a></li>
+        <li><a href="#pricing" class="text-gray-900 hover:text-green-700">Pricing</a></li>
+        <li><a href="#story" class="text-gray-900 hover:text-green-700">About</a></li>
+        <li><a href="#contact" class="text-gray-900 hover:text-green-700">Contact</a></li>
       </ul>
-      <button class="px-6 py-2 bg-blue-400 rounded-full mr-2 text-white hover:bg-blue-600 capitalize">Sign Up</button>
-
+      <button class="px-6 py-2 bg-blue-400 rounded-full mr-2 text-white hover:bg-blue-600 capitalize hidden laptop:inline">Sign Up</button>
+      <button class="mobile-icon mr-3 laptop:hidden"><img src="./imgs/menu.svg" alt="imageMenu"></button>
     </nav>
   </div>
 
+
+<!-- mobile nav -->
+<div class="mobile-menu hidden laptop:hidden">
+  <ul class="flex flex-col text-center space-y-4 mt-4">
+    <li><a href="#projects" class="text-gray-900 hover:text-green-700">Projects</a></li>
+    <li><a href="#pricing" class="text-gray-900 hover:text-green-700">Pricing</a></li>
+    <li><a href="#story" class="text-gray-900 hover:text-green-700">About</a></li>
+    <li><a href="#contact" class="text-gray-900 hover:text-green-700">Contact</a></li>
+    
+  </ul>
+  <div class="text-center mt-3">
+    <button class="px-6 py-2 bg-blue-400 rounded mr-2 text-white hover:bg-blue-600 capitalize">Sign Up</button>
+  </div>
+</div>
+
+
   <!-- hero section -->
-  <div class="container mx-auto flex mt-12">
 
-    <div class="w-1/2">
-      <img class="mx-auto" src="/imgs/hero.svg" alt="hero_image">
-    </div>
+  <div class="container mx-auto flex flex-col laptop:flex-row mt-12">
 
-    <div class="w-1/2 text-center">
-      <p class="p-6 mt-24 ml-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sequi, atque dignissimos
+    <div class="laptop:w-1/2 text-center">
+      <p class="mt-12 laptop:mt-24">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sequi, atque dignissimos
         et voluptates quasi id amet? Reprehenderit alias provident ipsum ratione?</p>
       <button class="px-6 py-2 bg-blue-400 rounded-full mr-2 text-white hover:bg-blue-600 text-center mt-5">Get
         started</button>
     </div>
+
+    <div class="laptop:w-1/2 text-center">
+      <img class="mx-auto" src="/imgs/hero.svg" alt="hero_image">
+    </div>
+
   </div>
 
   <!-- main section -->
 
-  <div class="container mx-auto flex mt-12 mb-12">
-    <div class="w-1/3 justify-center text-center">
+  <div class="container mx-auto flex flex-col laptop:flex-row mt-12 mb-12" id="projects">
+    <div class="laptop:w-1/3 justify-center text-center">
       <h1 class="text-2xl text-blue-800 capitalize font-medium">Web development</h1>
       <img class="h-40 w-40 mx-auto" src="/imgs/nuxt.svg" alt="nuxt_image">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eum ad ut facilis dolor repellendus molestiae
         quas minima deserunt autem quae, explicabo quia, commodi placeat tempore quod rem beatae voluptate.</p>
 
     </div>
-    <div class="w-1/3 justify-center text-center">
+    <div class="laptop:w-1/3 justify-center text-center">
       <h1 class="text-2xl text-blue-800 capitalize font-medium">Mobile development</h1>
       <img class="h-40 w-40 mx-auto" src="/imgs/mobile.svg" alt="mobile_image">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eum ad ut facilis dolor repellendus molestiae
@@ -60,7 +78,7 @@
 
     </div>
 
-    <div class="w-1/3 justify-center text-center">
+    <div class="laptop:w-1/3 justify-center text-center">
       <h1 class="text-2xl text-blue-800 capitalize font-medium">Design</h1>
       <img class="h-40 w-40 mx-auto" src="/imgs/design.svg" alt="design_image">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eum ad ut facilis dolor repellendus molestiae
@@ -69,7 +87,7 @@
 
   </div>
   <!-- price section -->
-  <div class="container mt-6 mx-32 mb-3">
+  <div class="container mt-6 mx-auto mb-3" id="pricing">
 
     <div class="text-center">
       <h1 class="text-3xl text-blue-900 font-bold">Pricing</h1>
@@ -77,7 +95,7 @@
       <p class="text-2xl">featured price plans here,bold and beautifully</p>
     </div>
 
-    <div class="grid grid-cols-3 gap-4 mx-24 mt-10">
+    <div class="grid laptop:grid-cols-3 grid-cols-1 gap-4 mx-24 mt-10">
       <div class="bg-gray-100 rounded-3xl mt-4 w-80 hover:shadow-2xl text-center">
         <h1 class="text-5xl text-blue-900 mt-8">$199</h1>
         <h2 class="text-blue-500 mb-3">Basic</h2>
@@ -245,12 +263,12 @@
   </div>
 
   <!-- story section -->
-  <div class="container mt-6 mx-32 mb-3">
+  <div class="container mt-6 mx-auto mb-3" id="story">
     <div class="text-center">
       <h2 class="text-2xl font-medium">Recent Updates</h2>
       <h1 class="text-5xl text-blue-600">Featured Stories</h1>
     </div>
-    <div class="grid grid-cols-3 mx-24 mt-10">
+    <div class="grid laptop:grid-cols-3 grid-cols-1 mx-24 mt-10">
       <div class="bg-gray-100 rounded-3xl mt-8 w-80 hover:shadow-2xl text-center h-128">
         <img src="/imgs/mobile.svg" alt="mobile_image" class="mt-4">
         <h1 class="text-2xl text-blue-600 mt-4">Remote Working</h1>
@@ -274,17 +292,18 @@
 
     </div>
   </div>
+
 <!-- footer -->
-<footer class="bg-gray-100 mt-12 pb-8">
-  <div class="container mx-auto flex pt-15">
+<footer class="bg-gray-100 mt-12 pb-8 m-4" id="contact">
+  <div class="container mx-auto flex flex-col laptop:flex-row pt-15">
 
     <!-- 25% -->
-    <div class="w-1/4">
+    <div class="laptop:w-1/4">
       <p class="text-blue-600 text-xl">Ivan Coding with Tailwind</p>
     </div>
 
     <!-- 50% -->
-    <div class="w-1/2 flex justify-end">
+    <div class="laptop:w-1/2 flex flex-col laptop:flex-row laptop: justify-end">
       <div class="pr-24">
       <h3 class="font-bold text-gray-600 text-lg">Links</h3>
       <ul class="text-gray-600 space-y-2 mt-4">
@@ -313,7 +332,7 @@
 
 
     <!-- 25% -->
-    <div class="w-1/4 flex justify-end space-x-3">
+    <div class="laptop:w-1/4 flex justify-center space-x-3">
      <button>
       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="40" height="40" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -341,7 +360,18 @@
 
   </div>
 </footer>
+<script type="text/javascript">
 
+const menu = document.querySelector('.mobile-menu');
+
+const icon = document.querySelector('.mobile-icon');
+
+icon.addEventListener('click', ()=> {
+  menu.classList.toggle('hidden');
+});
+
+
+</script>
 </body>
 
 </html>
